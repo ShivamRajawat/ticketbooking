@@ -1,0 +1,46 @@
+[
+  {
+    "trainId": "T001",
+    "trainNo": "12345",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stationTimes": {
+      "bangalore": "08:00:00",
+      "hyderabad": "12:30:00",
+      "nagpur": "18:45:00",
+      "delhi": "23:59:00"
+    },
+    "stations": [
+      "bangalore",
+      "hyderabad",
+      "nagpur",
+      "delhi"
+    ]
+  },
+  {
+    "trainId": "T002",
+    "trainNo": "12346",
+    "seats": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "stationTimes": {
+      "mumbai": "07:00:00",
+      "pune": "09:30:00",
+      "hyderabad": "15:45:00",
+      "chennai": "22:00:00"
+    },
+    "stations": [
+      "mumbai",
+      "pune",
+      "hyderabad",
+      "chennai"
+    ]
+  }
+]
