@@ -1,0 +1,53 @@
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations.configureEach {
+    resolutionStrategy {
+        force 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'  // Using an older version compatible with Java 8
+    }
+}
+
+dependencies {
+    // Jackson for JSON handling
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7'
+
+
+
+    // BCrypt for password hashing
+    implementation 'de.svenkubiak:jBCrypt:0.4'
+
+    // Testing
+
+
+    application {
+        mainClassName = 'ticket.App'  // Using mainClassName instead of mainClass for older Gradle
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    application {
+        mainClassName = 'ticket.App'
+    }
+
+    test {
+        useJUnit()
+        systemProperty "file.encoding", "UTF-8"
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+}
