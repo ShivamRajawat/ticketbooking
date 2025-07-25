@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    // Jackson
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3' // For Java 8 date/time support
+
+    // ModelMapper
+    implementation 'org.modelmapper:modelmapper:3.2.0'
+
+    // BCrypt
+    implementation 'org.mindrot:jbcrypt:0.4'
+    // Alternative Spring Security BCrypt (uncomment if you're using Spring)
+    // implementation 'org.springframework.security:spring-security-crypto:6.2.1'
+
+    // Testing
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // Lombok for tests
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+
+test {
+    useJUnitPlatform()
+}
